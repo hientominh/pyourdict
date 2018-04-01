@@ -42,7 +42,7 @@ def translate(word):
 def index():
     with sqlite3.connect('oxdi.db') as conn:
         conn.row_factory = sqlite3.Row
-        words = [(row['time'], row['word'], row['means']) for row in conn.execute('SELECT * FROM words;')]
+        words = [(row['time'], row['word'], row['means']) for row in conn.execute('SELECT * FROM words ORDER BY time DESC;')]
 
     return render_template('index.html', words=words)
 
