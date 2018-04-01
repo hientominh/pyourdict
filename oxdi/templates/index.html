@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+        {% for timestamp, word, means in words %}
+        <div>{{ timestamp }}. <b>{{ word }}</b>
+            <ul>
+                {% for mean in means.split('\n') %}
+                <li>
+                    {{ mean }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+{% endblock body %}

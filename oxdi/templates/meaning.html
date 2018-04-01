@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+    <div>
+        <h3>{{ word }}</h3>
+        <ul>
+            {% for mean in means %}
+            <li>{{ mean }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+{% endblock body %}
